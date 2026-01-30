@@ -13,14 +13,12 @@
 </head>
 <body>
 
-  <!-- Burger menu knop -->
   <div class="burger" onclick="toggleMenu()">☰</div>
 
-  <!-- Verborgen menu -->
   <div class="menu">
-    <a href="#">About</a>
-    <a href="#">News</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <main>
@@ -30,6 +28,27 @@
       <p>CAMI is a wearable safety device designed for peace of mind and protection in public spaces.</p>
     </div>
   </main>
+
+  <!-- Hidden Sections -->
+  <section id="about" class="content-section">
+    <h2>About</h2>
+    <p>
+      CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces. The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service. CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.<br><br>
+      It is privacy-by-design. Recordings are visible, temporary (rolling buffer max 48 hours), and strictly meant for personal safety and incident evidence. AI is used as a supportive detection layer (e.g., aggression or stress patterns), without autonomous decisions or biometric identification. CAMI is fully GDPR-compliant and aligns with recent European legal standards.<br><br>
+      CAMI is not a surveillance tool or emergency service. It is an empowerment tool: users stay in control and always have direct support within reach.<br><br>
+      The product is built as a scalable, sustainable subscription platform, where long-term value lies in the software, AI, and cloud infrastructure rather than the hardware alone.
+    </p>
+  </section>
+
+  <section id="news" class="content-section">
+    <h2>News</h2>
+    <p>This project is currently under development by experienced and passionate entrepreneurs. More updates will follow soon.</p>
+  </section>
+
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Email: hello@camialert.com</p>
+  </section>
 
 </body>
 </html>
