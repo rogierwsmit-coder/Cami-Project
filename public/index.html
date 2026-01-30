@@ -21,12 +21,12 @@
     }
 
     .main-text h1 {
-      font-size: 3rem;
+      font-size: 3.6rem;
       margin: 20px 0 10px 0;
     }
 
     .main-text p {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -98,8 +98,8 @@
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <div class="menu" id="menu">
-    <a href="#" onclick="showSection('about')">About</a>
-    <a href="#" onclick="showSection('news')">News</a>
+    <a href="#" data-section="about">About</a>
+    <a href="#" data-section="news">News</a>
   </div>
 
   <img src="logo.png" alt="CAMI Alert Logo" class="logo" />
@@ -130,54 +130,34 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function toggleMenu() {
+    document.addEventListener("DOMContentLoaded", function () {
       const menu = document.getElementById("menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
+      const links = document.querySelectorAll(".menu a");
+      const sections = document.querySelectorAll("section");
 
-    function showSection(id) {
-      document.querySelectorAll("section").forEach((sec) => {
-        sec.style.display = "none";
-      });
-      document.getElementById(id).style.display = "block";
-      document.getElementById("menu").style.display = "none";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      window.toggleMenu = function () {
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      };
 
-    // Maak functies globaal bereikbaar
-    window.toggleMenu = toggleMenu;
-    window.showSection = showSection;
-  });
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Menu toggle
-    const menu = document.getElementById("menu");
-    document.querySelector(".hamburger").addEventListener("click", function () {
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    });
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const id = this.dataset.section;
 
-    // Section display
-    document.querySelectorAll(".menu a").forEach(link => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const id = this.getAttribute("href").substring(1);
+          sections.forEach(section => {
+            section.style.display = "none";
+          });
 
-        document.querySelectorAll("section").forEach(section => {
-          section.style.display = "none";
+          const target = document.getElementById(id);
+          if (target) {
+            target.style.display = "block";
+          }
+
+          menu.style.display = "none";
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
-        const target = document.getElementById(id);
-        if (target) {
-          target.style.display = "block";
-        }
-
-        menu.style.display = "none";
-        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
