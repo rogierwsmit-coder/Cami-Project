@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #f1eee7); /* smooth white to beige */
+  background-color: #ffffff; /* volledig wit */
   color: #333;
   text-align: center;
 }
@@ -40,20 +40,20 @@ body {
 }
 
 .center-logo {
-  width: 375px;
+  width: 562px; /* 375px * 1.5 = 562px */
   max-width: 90%;
   margin: 120px auto 20px;
   display: block;
 }
 
 .description h1 {
-  font-size: 28px;
+  font-size: 47.6px; /* origineel was 28px, nu 70% groter */
   margin: 10px 0;
 }
 
 .description p {
-  font-size: 18px;
-  max-width: 600px;
+  font-size: 30.6px; /* origineel was 18px, nu 70% groter */
+  max-width: 900px;
   margin: 0 auto;
 }
 
