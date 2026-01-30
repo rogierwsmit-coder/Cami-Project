@@ -26,33 +26,34 @@
     }
 
     .menu-icon {
-      display: none;
+      display: block;
       font-size: 30px;
       cursor: pointer;
+      z-index: 1001;
     }
 
-    nav {
+    .menu {
       display: none;
       flex-direction: column;
-      gap: 1rem;
-      background: #fff;
-      padding: 2rem;
       position: fixed;
       top: 0;
       right: 0;
-      height: 100vh;
-      width: 60%;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      width: 250px;
+      height: 100%;
+      background-color: #fff;
+      padding-top: 100px;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
-    nav a {
+    .menu a {
       text-decoration: none;
       color: #222;
       font-size: 1.2rem;
+      margin: 20px;
     }
 
-    nav.open {
+    .menu.open {
       display: flex;
     }
 
@@ -79,7 +80,7 @@
       border-top: 1px solid #eee;
     }
 
-    /* Mobile adjustments */
+    /* Responsiveness */
     @media (max-width: 768px) {
       .logo {
         width: 180px;
@@ -93,25 +94,22 @@
         font-size: 1rem;
         padding: 0 1rem;
       }
-
-      .menu-icon {
-        display: block;
-      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div></div> <!-- Spacer -->
+    <div></div> <!-- spacer -->
     <img src="logo.png" alt="CAMI Logo" class="logo" />
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
   </header>
 
-  <nav id="mobileMenu">
-    <a href="#about">About</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+  <!-- Burger Menu -->
+  <nav id="mobileMenu" class="menu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#news" onclick="closeMenu()">News</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
   </nav>
 
   <div class="main-content">
@@ -121,32 +119,17 @@
     </p>
   </div>
 
-  <section id="about" class="main-content">
-    <h2>About</h2>
-    <p>
-      CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces.
-      The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service.
-      CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.
-    </p>
-  </section>
-
-  <section id="news" class="main-content">
-    <h2>News</h2>
-    <p>This project is currently under development by a group of experienced and passionate entrepreneurs.</p>
-  </section>
-
-  <section id="contact" class="main-content">
-    <h2>Contact</h2>
-    <p>Get in touch: info@camialert.com</p>
-  </section>
-
   <footer>
     © Cami Alert 2026 · Patent pending · All rights reserved
   </footer>
 
   <script>
     function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("open");
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
     }
   </script>
 
