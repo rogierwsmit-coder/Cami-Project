@@ -130,6 +130,7 @@
   </footer>
 
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
       const menu = document.getElementById("menu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -143,6 +144,12 @@
       document.getElementById("menu").style.display = "none";
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  </script>
+
+    // Maak functies globaal bereikbaar
+    window.toggleMenu = toggleMenu;
+    window.showSection = showSection;
+  });
+</script>
+
 </body>
 </html>
