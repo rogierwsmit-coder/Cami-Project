@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAMI Alert</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    .topnav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 2em;
+    }
+
+    .menu.hidden {
+      display: none;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5em 2em;
+      background: #fafafa;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      padding: 3em 2em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+
+    .content-section p {
+      line-height: 1.6;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        right: 2em;
+        top: 70px;
+        padding: 1em;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topnav">
+    <img src="logo.png" alt="CAMI Alert Logo" class="logo" />
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="menu" class="menu hidden">
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Personal Safety. Smartly Designed.</h1>
+      <p>CAMI is a wearable safety device designed for peace of mind and protection in public spaces.</p>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2>About CAMI</h2>
+      <p>
+        CAMI is a wearable personal safety platform built to increase the sense of security for women in public spaces. It combines a body-worn device (camera, sensors, alarm) with a mobile app and subscription service. CAMI is focused not only on incident response, but on prevention, peace of mind, and direct support during escalation.
+      </p>
+      <p>
+        CAMI is privacy-by-design. Footage is visible, temporary (rolling buffer max 48 hours), and strictly intended for personal safety or as incident evidence. AI is used only as a supportive detection layer—no autonomous decision-making or biometric identification—making CAMI legally compliant under GDPR and European legal frameworks.
+      </p>
+      <p>
+        CAMI is not a surveillance tool or emergency service. It does not guarantee prevention or replace official aid. It is designed as an empowerment tool: the user stays in control while having immediate support within reach.
+      </p>
+      <p>
+        Strategically, CAMI is a hardware-enabled subscription platform. The hardware acts as an entry point; the core value lies in the software, AI, cloud infrastructure, and recurring subscription. This model is sustainable and internationally scalable.
+      </p>
+    </section>
+
+    <section id="news" class="content-section">
+      <h2>News</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact</h2>
+      <p>Email: hello@cami-alert.com</p>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
