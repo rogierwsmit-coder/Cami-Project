@@ -3,56 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CAMI</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('active');
+  <title>Cami Alert</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      text-align: center;
+      color: #222;
     }
-  </script>
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .logo {
+      width: 240px;
+      max-width: 80%;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: #fff;
+      padding: 2rem;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 60%;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-size: 1.2rem;
+    }
+
+    nav.open {
+      display: flex;
+    }
+
+    .main-content {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    p.lead {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .logo {
+        width: 180px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.lead {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="burger" onclick="toggleMenu()">☰</div>
+  <header>
+    <div></div> <!-- Spacer -->
+    <img src="logo.png" alt="CAMI Logo" class="logo" />
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </header>
 
-  <div class="menu">
+  <nav id="mobileMenu">
     <a href="#about">About</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="main-content">
+    <h1>Personal Safety. Smartly Designed.</h1>
+    <p class="lead">
+      CAMI is a wearable safety device designed for peace of mind and protection in public spaces.
+    </p>
   </div>
 
-  <main>
-   <img src="logo.png" alt="CAMI Logo" class="center-logo">
-
-<div class="intro-text">
-  Personal Safety. Smartly Designed.
-</div>
-<div class="sub-text">
-  CAMI is a wearable safety device designed for peace of mind and protection in public spaces.
-</div>
-
-  </main>
-
-  <!-- Hidden Sections -->
-  <section id="about" class="content-section">
+  <section id="about" class="main-content">
     <h2>About</h2>
     <p>
-      CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces. The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service. CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.<br><br>
-      It is privacy-by-design. Recordings are visible, temporary (rolling buffer max 48 hours), and strictly meant for personal safety and incident evidence. AI is used as a supportive detection layer (e.g., aggression or stress patterns), without autonomous decisions or biometric identification. CAMI is fully GDPR-compliant and aligns with recent European legal standards.<br><br>
-      CAMI is not a surveillance tool or emergency service. It is an empowerment tool: users stay in control and always have direct support within reach.<br><br>
-      The product is built as a scalable, sustainable subscription platform, where long-term value lies in the software, AI, and cloud infrastructure rather than the hardware alone.
+      CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces.
+      The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service.
+      CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.
     </p>
   </section>
 
-  <section id="news" class="content-section">
+  <section id="news" class="main-content">
     <h2>News</h2>
-    <p>This project is currently under development by experienced and passionate entrepreneurs. More updates will follow soon.</p>
+    <p>This project is currently under development by a group of experienced and passionate entrepreneurs.</p>
   </section>
 
-  <section id="contact" class="content-section">
+  <section id="contact" class="main-content">
     <h2>Contact</h2>
-    <p>Email: hello@camialert.com</p>
+    <p>Get in touch: info@camialert.com</p>
   </section>
+
+  <footer>
+    © Cami Alert 2026 · Patent pending · All rights reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
