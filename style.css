@@ -40,7 +40,7 @@ body {
 }
 
 .center-logo {
-  width: 562px; /* 375px * 1.5 = 562px */
+  width: 393px; /* 30% kleiner dan vorige 562px */
   max-width: 90%;
   margin: 120px auto 20px;
   display: block;
