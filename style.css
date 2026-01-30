@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f7f6f3; /* zacht beige passend bij logo */
+  background: linear-gradient(to bottom, #ffffff, #f1eee7); /* smooth white to beige */
   color: #333;
   text-align: center;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .center-logo {
-  width: 375px; /* 50% groter dan voorheen (was 250px) */
+  width: 375px;
   max-width: 90%;
   margin: 120px auto 20px;
   display: block;
