@@ -3,138 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cami Alert</title>
+  <title>CAMI Alert</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background: white;
-      color: #222;
+      color: #333;
       text-align: center;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: relative;
-    }
-
     .logo {
-      width: 240px;
-      max-width: 80%;
+      max-width: 240px;
+      width: 30%;
+      height: auto;
+      margin-top: 60px;
     }
 
-    .menu-icon {
-      font-size: 30px;
-      cursor: pointer;
-      z-index: 1001;
+    .hero {
+      padding: 20px;
     }
 
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #fff;
-      padding-top: 100px;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
+    .hero h1 {
+      font-size: 2.4em;
+      margin-bottom: 10px;
     }
 
-    .menu a {
-      text-decoration: none;
-      color: #222;
-      font-size: 1.2rem;
-      margin: 20px;
-    }
-
-    .menu.open {
-      display: flex;
-    }
-
-    .main-content {
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: 3rem; /* +20% t.o.v. 2.5rem */
-      margin: 1rem 0 0.5rem;
-    }
-
-    p.lead {
-      font-size: 1.56rem; /* +20% t.o.v. 1.3rem */
+    .hero p {
+      font-size: 1.4em;
       max-width: 700px;
       margin: 0 auto;
     }
 
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #777;
-      border-top: 1px solid #eee;
+    /* Navigation */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 1000;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
     }
 
-    @media (max-width: 768px) {
+    .nav {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #f9f9f9;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      padding-top: 80px;
+      transition: right 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .nav.active {
+      right: 0;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav a:hover {
+      background-color: #eee;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
       .logo {
-        width: 180px;
+        width: 50%;
+        margin-top: 40px;
       }
 
-      h1 {
-        font-size: 2.4rem;
+      .hero h1 {
+        font-size: 1.8em;
       }
 
-      p.lead {
-        font-size: 1.2rem;
-        padding: 0 1rem;
+      .hero p {
+        font-size: 1.1em;
+        padding: 0 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div></div> <!-- spacer -->
-    <img src="logo.png" alt="CAMI Logo" class="logo" />
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  </header>
+  <!-- Hamburger menu button -->
+  <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
 
-  <!-- Hamburger Menu -->
-  <nav id="mobileMenu" class="menu">
-    <a href="#">About</a>
-    <a href="#">News</a>
+  <!-- Slide-out navigation -->
+  <nav class="nav" id="navMenu">
+    <a href="#about">About</a>
+    <a href="#news">News</a>
   </nav>
 
-  <!-- Homepage Content -->
-  <div class="main-content">
+  <!-- Logo and hero text -->
+  <div class="hero">
+    <img src="images/logo.png" alt="CAMI Logo" class="logo"/>
     <h1>Personal Safety. Smartly Designed.</h1>
-    <p class="lead">
-      CAMI is a wearable safety device designed for peace of mind and protection in public spaces.
-    </p>
+    <p>CAMI is a wearable safety device designed for peace of mind and protection in public spaces.</p>
   </div>
 
+  <!-- About section (linked from menu only) -->
+  <section id="about">
+    <h2>About</h2>
+    <p>CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces.
+    The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service.
+    CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.</p>
+  </section>
+
+  <!-- News section -->
+  <section id="news">
+    <h2>News</h2>
+    <p>This project is currently under development by a team of experienced and passionate entrepreneurs.</p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © Cami Alert 2026 · Patent pending · All rights reserved
+    © CAMI Alert 2026 — Patent pending. All rights reserved.
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
-    }
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const navMenu = document.getElementById("navMenu");
 
-    // Close menu when clicking a link (optional enhancement)
-    document.querySelectorAll('.menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.remove('open');
-      });
+    toggleBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
     });
   </script>
-
 </body>
 </html>
