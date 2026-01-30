@@ -1,69 +1,97 @@
+/* Algemene styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* volledig wit */
-  color: #333;
+  background: #ffffff;
   text-align: center;
+  color: #333;
 }
 
-.burger {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-.menu.active {
+/* Logo styling */
+.center-logo {
+  width: 393px;
+  max-width: 90%;
+  margin: 100px auto 20px;
   display: block;
+}
+
+/* Intro-tekst */
+.intro-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* Burger menu styling */
+.burger {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger div {
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Menu drawer */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 200px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  padding-top: 100px;
+  z-index: 1000;
 }
 
 .menu a {
   display: block;
+  margin: 20px;
   text-decoration: none;
   color: #333;
-  padding: 8px 0;
+  font-size: 1.1rem;
 }
 
-.center-logo {
-  width: 393px; /* 30% kleiner dan vorige 562px */
-  max-width: 90%;
-  margin: 120px auto 20px;
-  display: block;
+.menu.open {
+  right: 0;
 }
 
-.description h1 {
-  font-size: 47.6px; /* origineel was 28px, nu 70% groter */
-  margin: 10px 0;
-}
+/* Responsiveness */
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 1.5rem;
+  }
 
-.description p {
-  font-size: 30.6px; /* origineel was 18px, nu 70% groter */
-  max-width: 900px;
-  margin: 0 auto;
-}
+  .sub-text {
+    font-size: 1rem;
+  }
 
-.content-section {
-  padding: 4em 2em;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
+  .center-logo {
+    width: 80%;
+    margin-top: 60px;
+  }
 
-.content-section h2 {
-  text-align: center;
+  .menu a {
+    font-size: 1rem;
+  }
 }
