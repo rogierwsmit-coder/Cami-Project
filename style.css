@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.burger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.menu.active {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 0;
+}
+
+.center-logo {
+  width: 250px;
+  max-width: 80%;
+  margin: 100px auto 20px;
+  display: block;
+}
+
+.description h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.description p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
