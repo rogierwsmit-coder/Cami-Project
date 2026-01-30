@@ -9,15 +9,16 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: white;
-      text-align: center;
       color: #222;
+      text-align: center;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
+      position: relative;
     }
 
     .logo {
@@ -26,7 +27,6 @@
     }
 
     .menu-icon {
-      display: block;
       font-size: 30px;
       cursor: pointer;
       z-index: 1001;
@@ -62,12 +62,12 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem; /* +20% t.o.v. 2.5rem */
       margin: 1rem 0 0.5rem;
     }
 
     p.lead {
-      font-size: 1.3rem;
+      font-size: 1.56rem; /* +20% t.o.v. 1.3rem */
       max-width: 700px;
       margin: 0 auto;
     }
@@ -80,18 +80,17 @@
       border-top: 1px solid #eee;
     }
 
-    /* Responsiveness */
     @media (max-width: 768px) {
       .logo {
         width: 180px;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
       }
 
       p.lead {
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 0 1rem;
       }
     }
@@ -105,13 +104,13 @@
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
   </header>
 
-  <!-- Burger Menu -->
+  <!-- Hamburger Menu -->
   <nav id="mobileMenu" class="menu">
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#news" onclick="closeMenu()">News</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#">About</a>
+    <a href="#">News</a>
   </nav>
 
+  <!-- Homepage Content -->
   <div class="main-content">
     <h1>Personal Safety. Smartly Designed.</h1>
     <p class="lead">
@@ -125,12 +124,16 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
     }
 
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('open');
-    }
+    // Close menu when clicking a link (optional enhancement)
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+      });
+    });
   </script>
 
 </body>
