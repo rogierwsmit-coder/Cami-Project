@@ -149,6 +149,34 @@
     window.toggleMenu = toggleMenu;
     window.showSection = showSection;
   });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Menu toggle
+    const menu = document.getElementById("menu");
+    document.querySelector(".hamburger").addEventListener("click", function () {
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    });
+
+    // Section display
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const id = this.getAttribute("href").substring(1);
+
+        document.querySelectorAll("section").forEach(section => {
+          section.style.display = "none";
+        });
+
+        const target = document.getElementById(id);
+        if (target) {
+          target.style.display = "block";
+        }
+
+        menu.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  });
 </script>
 
 </body>
