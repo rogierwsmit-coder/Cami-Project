@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background-color: #f7f6f3; /* zacht beige passend bij logo */
   color: #333;
   text-align: center;
 }
@@ -40,9 +40,9 @@ body {
 }
 
 .center-logo {
-  width: 250px;
-  max-width: 80%;
-  margin: 100px auto 20px;
+  width: 375px; /* 50% groter dan voorheen (was 250px) */
+  max-width: 90%;
+  margin: 120px auto 20px;
   display: block;
 }
 
@@ -55,4 +55,15 @@ body {
   font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.content-section {
+  padding: 4em 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.content-section h2 {
+  text-align: center;
 }
