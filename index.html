@@ -7,142 +7,53 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background: white;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
     }
 
-    .logo {
-      max-width: 220px;
-      width: 100%;
+    img.logo {
+      max-width: 90%;
+      width: 320px;
       height: auto;
-      margin-top: 50px;
+      margin-bottom: 30px;
     }
 
-    .main-text h1 {
-      font-size: 3rem;
-      margin: 20px 0 10px 0;
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .main-text p {
-      font-size: 1.6rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .hamburger {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 1000;
-      font-size: 28px;
-    }
-
-    .menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-
-    .menu a {
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .menu a:hover {
-      background: #f5f5f5;
-    }
-
-    section {
-      display: none;
-      max-width: 800px;
-      margin: 50px auto;
+    p {
+      font-size: 1rem;
+      max-width: 600px;
       padding: 0 20px;
-      text-align: left;
     }
 
-    footer {
-      margin-top: 100px;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #999;
-    }
-
-    @media (max-width: 768px) {
-      .logo {
-        max-width: 150px;
-        margin-top: 30px;
+    @media (min-width: 768px) {
+      img.logo {
+        width: 400px;
       }
 
-      .main-text h1 {
-        font-size: 2.3rem;
+      h1 {
+        font-size: 2.2rem;
       }
 
-      .main-text p {
-        font-size: 1.3rem;
+      p {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="menu" id="menu">
-    <a href="#" onclick="showSection('about')">About</a>
-    <a href="#" onclick="showSection('news')">News</a>
-  </div>
-
   <img src="logo.png" alt="CAMI Alert Logo" class="logo" />
-
-  <div class="main-text">
-    <h1>Personal Safety. Smartly Designed.</h1>
-    <p>CAMI is a wearable safety device designed for peace of mind and protection in public spaces.</p>
-  </div>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      CAMI is a wearable personal safety platform created to increase the sense of safety for women in public spaces.
-      The product combines a body-worn device (camera, sensors, alarm) with a mobile app and a subscription service.
-      CAMI focuses not only on incident response, but especially on prevention, peace of mind, and direct support when a situation escalates.
-    </p>
-  </section>
-
-  <section id="news">
-    <h2>News</h2>
-    <p>
-      This project is currently under development by experienced and passionate entrepreneurs.
-    </p>
-  </section>
-
-  <footer>
-    © CAMI Alert 2026 — Patent Pending — All Rights Reserved
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    function showSection(id) {
-      document.querySelectorAll("section").forEach((sec) => {
-        sec.style.display = "none";
-      });
-      document.getElementById(id).style.display = "block";
-      document.getElementById("menu").style.display = "none";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+  <h1>Empowering Personal Safety Through Smart Design</h1>
+  <p>CAMI is a wearable device that supports prevention, peace of mind, and direct assistance when needed.</p>
 </body>
 </html>
